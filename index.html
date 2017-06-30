@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Convert</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+      <textarea v-model="input" placeholder="Enter Markdown text..."></textarea>
+      <div id="result">{{{ input | marked }}}</div>
+  </div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>>
+  <script>
+
+      Vue.filter('marked', marked)
+
+      new Vue({
+        	el: "#app",
+        	data: {
+        		input: ''
+        	}
+      })
+</script>
+</body>
+</html>
